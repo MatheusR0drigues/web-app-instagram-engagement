@@ -74,3 +74,7 @@ option_2 = st.sidebar.checkbox('Dynamic Chart')
 
 if option_2:
     show_number_rows_df(df)
+else:
+    df_v2 = st.dataframe(df[:5])
+    figure = plot_chart(df_v2)
+    st.pyplot(figure)
