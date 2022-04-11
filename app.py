@@ -6,8 +6,6 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 # Function to select the number of rows from the data base
-
-
 def show_number_rows(dataframe):
 
     number_rows = st.sidebar.slider('Select the number of rows that'
@@ -17,7 +15,7 @@ def show_number_rows(dataframe):
 
     return st.dataframe(df[:number_rows])
 
-
+# Function to select the number categories on the chart
 def show_number_rows_df(dataframe):
 
     number_rows = st.sidebar.slider('Select the number of rows that'
@@ -30,7 +28,6 @@ def show_number_rows_df(dataframe):
     return st.pyplot(figure)
 
 # Function that create the chart
-
 def plot_chart(df):
 
     sns.set_style('whitegrid')
@@ -39,15 +36,13 @@ def plot_chart(df):
                      data=df, palette='viridis')
     ax.set_title('Engagement Percentage by Instagram Category'
                  '(909 most engaged accounts analyzed)', fontsize=20)
-    ax.set_xlabel('Percentage (%)', fontsize=14)
+    ax.set_xlabel('Percentage (%)', fontsize=20)
     ax.tick_params(rotation=0, axis='both', labelsize=23)
-    ax.set_ylabel('Categories', fontsize=14)
+    ax.set_ylabel('Categories', fontsize=20)
 
     return fig
 
 # Creating a dynamic data frame
-
-
 def dynamic_df(dataframe, rows):
     df_v2 = dataframe[:rows]
 
@@ -69,12 +64,12 @@ if option_1:
     show_number_rows(df)
 
 # Ploting the chart
-
 option_2 = st.sidebar.checkbox('Dynamic Chart')
 
 if option_2:
     show_number_rows_df(df)
+
 else:
-    df_v2 = st.dataframe(df[:5])
-    figure = plot_chart(df_v2)
+    new_df = dynamic_df(df, 5)
+    figure = plot_chart(new_df)
     st.pyplot(figure)
