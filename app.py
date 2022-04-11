@@ -31,13 +31,12 @@ def show_number_rows_df(dataframe):
 
 # Function that create the chart
 
-
 def plot_chart(df):
 
     sns.set_style('whitegrid')
     fig, ax = plt.subplots(figsize=(13, 19))
     ax = sns.barplot(x='Engagement percentagem', y='Category',
-                     data=df, palette='CMRmap')
+                     data=df, palette='viridis')
     ax.set_title('Engagement Percentage by Instagram Category'
                  '(909 most engaged accounts analyzed)', fontsize=20)
     ax.set_xlabel('Percentage (%)', fontsize=14)
