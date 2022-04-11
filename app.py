@@ -49,12 +49,12 @@ def dynamic_df(dataframe, rows):
     return df_v2
 
 
-st.header('Data Analysis - Instagram Engagement')
+st.title('Data Analysis - Instagram Engagement')
 
 # Importing data base
 df = pd.read_csv('data/df_v4.csv')
 
-st.title('Instagram Categories')
+st.header('Instagram Categories')
 st.write('In this project we will analyze the most engaged'
          ' categories on Instagram')
 
@@ -70,6 +70,12 @@ if option_2:
     show_number_rows_df(df)
 
 else:
+    st.write('#### 5 most engaged categories')
     new_df = dynamic_df(df, 5)
     figure = plot_chart(new_df)
     st.pyplot(figure)
+
+st.write('This project was made as a sequel of my'
+         ' Instagram Engagement Data Analysis project'
+         ' that you can check on my github page:'
+         ' https://github.com/MatheusR0drigues/instagram-engagement-data-analysis')
