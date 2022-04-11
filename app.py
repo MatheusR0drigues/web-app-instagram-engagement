@@ -9,7 +9,7 @@ import seaborn as sns
 def show_number_rows(dataframe):
 
     number_rows = st.sidebar.slider('Select the number of rows that'
-                                    'you want to show', min_value=1,
+                                    'you want to see', min_value=1,
                                     max_value=len(dataframe), step=1,
                                     key=1)
 
@@ -19,7 +19,7 @@ def show_number_rows(dataframe):
 def show_number_rows_df(dataframe):
 
     number_rows = st.sidebar.slider('Select the number of rows that'
-                                    'you want to show', min_value=2,
+                                    'you want to see', min_value=2,
                                     max_value=len(dataframe), step=1,
                                     key=2)
     new_df = dynamic_df(dataframe, number_rows)
