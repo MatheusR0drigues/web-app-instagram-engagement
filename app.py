@@ -25,7 +25,7 @@ def show_number_rows_df(dataframe):
     new_df = dynamic_df(dataframe, number_rows)
     figure = plot_chart(new_df)
 
-    return st.pyplot(figure)
+    return st.write(f'#### {number_rows} most engaged categories'), st.pyplot(figure)
 
 # Function that create the chart
 def plot_chart(df):
